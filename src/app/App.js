@@ -12,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/users/:userId" element={<Users />} />
         <Route path="/users/*" element={<Users />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login/:type" element={<Login />} />
+        <Route path="/login/*" element={<Login />} />
         <Route exact path="/" element={<Main />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
