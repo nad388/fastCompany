@@ -5,6 +5,8 @@ import api from '../../api';
 import SelectField from '../common/form/selectField';
 import RadioField from '../common/form/radioField';
 import MultiSelectField from '../common/form/multiSelectField';
+import CheckBoxField from '../common/form/checkBoxField';
+import { NavLink } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [data, setData] = useState({
@@ -13,6 +15,7 @@ const RegisterForm = () => {
     profession: '',
     sex: 'male',
     qualities: [],
+    license: false,
   });
   const [qualities, setQualities] = useState({});
   const [professions, setProfessions] = useState();
@@ -50,6 +53,12 @@ const RegisterForm = () => {
     },
     profession: {
       isRequired: { message: 'Обязательно выберите вашу профессию' },
+    },
+    license: {
+      isRequired: {
+        message:
+          'Вы не можете использовать наш сервер без подтверждения лицензионного соглашения',
+      },
     },
   };
   useEffect(() => {
@@ -113,6 +122,14 @@ const RegisterForm = () => {
         name="qualities"
         label="Выберите ваши качества"
       />
+      <CheckBoxField
+        value={data.license}
+        onChange={handleChange}
+        name="license"
+        error={errors.license}
+      >
+        Подтвердить <NavLink>лицензионное соглашение</NavLink>
+      </CheckBoxField>
 
       <button
         type="submit"
