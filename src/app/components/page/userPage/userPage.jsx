@@ -9,7 +9,8 @@ const UserPage = ({ userId }) => {
   const [user, setUser] = useState();
   useEffect(() => {
     api.users.getById(userId).then((data) => setUser(data));
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const handleClick = () => {
     history('/users');
   };
