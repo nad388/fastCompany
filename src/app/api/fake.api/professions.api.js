@@ -21,7 +21,5 @@ const fetchAll = () =>
     }, 2000);
   });
 
-const professionApi = {
-  fetchAll,
-};
-export default professionApi;
+// eslint-disable-next-line import/no-anonymous-default-export
+export default { fetchAll };

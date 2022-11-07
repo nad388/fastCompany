@@ -195,6 +195,9 @@ const getById = (id) =>
       );
     }, 1000);
   });
-
-const userApi = { fetchAll, getById, update };
-export default userApi;
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  fetchAll,
+  getById,
+  update,
+};

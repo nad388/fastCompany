@@ -37,7 +37,7 @@ const fetchAll = () =>
     }, 2000);
   });
 
-const qualitiesApi = {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   fetchAll,
 };
-export default qualitiesApi
